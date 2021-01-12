@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import guru.springframework.sfgdi.controllers.ConstructorInjectedController;
-import guru.springframework.sfgdi.controllers.MyController;
+import guru.springframework.sfgdi.controllers.PrimaryController;
 import guru.springframework.sfgdi.controllers.PropertyInjectedController;
 import guru.springframework.sfgdi.controllers.SetterInjectedController;
 
@@ -14,7 +14,9 @@ public class SfgdiApplication {
 
 	public static void main(String[] args) {
 		 ApplicationContext ac=  SpringApplication.run(SfgdiApplication.class, args);
-		 MyController mc=(MyController) ac.getBean("myController");
+		 
+		 System.out.println(" ---- Primary ---- ");
+		 PrimaryController mc=(PrimaryController) ac.getBean("primaryController");
 		 System.out.println(mc.sayHello());
 		 
 		 System.out.println(" ---- Property ---- ");
